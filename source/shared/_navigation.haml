@@ -1,12 +1,44 @@
-.nav
-  %h3.nav-title Menu
-  %a.nav-close{href: '#'}
-    %span.hidden Close
-  %ul
-    - navigation.try(:each) do |label, href|
-      - css_class = %W(nav-#{label.parameterize})
-      - css_class << "nav-current" if current_page.url == href
-      %li{class: css_class.join(' ')}
-        %a{href: href}= label
-  %a.subscribe-button.icon-feed{href: feed_path} Subscribe
-%span.nav-cover
+-#.nav
+-#  %h3.nav-title Menu
+-#  %a.nav-close{href: '#'}
+-#    %span.hidden Close
+-#  %ul
+-#    - navigation.try(:each) do |label, href|
+-#      - css_class = %W(nav-#{label.parameterize})
+-#      - css_class << "nav-current" if current_page.url == href
+-#      %li{class: css_class.join(' ')}
+-#        %a{href: href}= label
+-#  %a.subscribe-button.icon-feed{href: feed_path} Subscribe
+-#%span.nav-cover
+
+
+%nav.navbar.navbar-default
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#navbar-menu", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => current_page.url}
+        %img{:alt => blog_settings.name, :src => "images/logo.png"}
+
+    #navbar-menu.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        - navigation.try(:each) do |label, href|
+          - css_class = %W(nav-#{label.parameterize})
+          %li.nav-item{class: css_class.join(' ')}
+            - if current_page.url == href
+              %a{href: href, class: 'current-item'}= label
+            - else
+              %a{href: href}= label
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %form.navbar-form.navbar-left
+            %input#search-field.form-control{:placeholder => "Search...", :type => "text"}
+        %li
+          %a.subscribe-button{href: feed_path}
+            %i.fa.fa-rss
+
+
+  %a{:name => "top"}
