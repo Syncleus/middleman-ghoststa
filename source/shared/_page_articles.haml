@@ -27,30 +27,7 @@
   = partial('shared/pagination') if paginate
 
 - page_articles.each do |article|
-  %article.post{:class => "post"}
-    %header.post-header
-      %h2.post-title= link_to article.title, article
-      %section.post-meta.text-muted
-        %ul.list-inline
-          %li
-            %i.fa.fa-calendar
-            %time.post-date{datetime: article.date.strftime('%Y-%m-%d')}
-              = article.date.strftime(blog_settings.date_format)
-          %li
-            -#{{#if image}}
-            -#%a.author-image{:href => gravatar(24), :style => 'background-image: url( gravatar(24) )'}
-            -#  %span.hidden {{name}}'s Picture
-            -#{{else}}
-            %i.fa.fa-user
-            -#{{/if}}
-            %a{href: author_path}= blog_author.name
-
-          %li
-            %i.fa.fa-folder-open
-            - if tags?(article)
-              #{tags(article)}
-
-    %section.post-content
-      = article.body
+  = partial('shared/article',
+                locals: { article: article })
 
 = partial('shared/pagination') if paginate

@@ -1,0 +1,10 @@
+.extra-pagination.inner
+  = partial('shared/pagination') if paginate
+
+- blog.tags.each do |tag, articles|
+  - if tag == selected_tag
+    - articles.each do |article|
+      = partial('shared/article',
+                    locals: { article: article })
+
+= partial('shared/pagination') if paginate
