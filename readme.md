@@ -5,10 +5,10 @@
 1. Create a new project with the template:
 
   ```bash
-  middleman init -T danielbayerlein/middleman-casper MY_PROJECT_FOLDER
+  middleman init -T danielbayerlein/middleman-ghoststa MY_PROJECT_FOLDER
   ```
 
-2. Change the `casper` settings in `config.rb`.
+2. Change the `ghoststa` settings in `config.rb`.
 
 ## Usage
 
@@ -31,7 +31,7 @@ For help, see the official [Middleman](https://middlemanapp.com) website.
 Configurable in *config.rb*:
 
 ```ruby
-config[:casper] = {
+config[:ghoststa] = {
   ...
   author: {
     name: 'Middleman'
@@ -45,7 +45,7 @@ config[:casper] = {
 Configurable in *config.rb*:
 
 ```ruby
-config[:casper] = {
+config[:ghoststa] = {
   ...
   navigation: {
     "Home" => "/",
@@ -61,7 +61,7 @@ config[:casper] = {
 Configurable in *config.rb*:
 
 ```ruby
-config[:casper] = {
+config[:ghoststa] = {
   ...
   blog: {
     logo: 'my-awesome-blog-logo.png' # sources/images/my-awesome-blog-logo.png

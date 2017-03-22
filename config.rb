@@ -1,8 +1,8 @@
 ###
-# middleman-casper configuration
+# middleman-ghoststa configuration
 ###
 
-config[:casper] = {
+config[:ghoststa] = {
   blog: {
     url: 'http://www.example.com',
     name: 'Middleman',
@@ -68,7 +68,7 @@ tags.each do |tagname, articles|
     locals: { tagname: tagname, articles: articles[0..5] }, layout: false
 end
 
-proxy "/author/#{config.casper[:author][:name].parameterize}.html",
+proxy "/author/#{config.ghoststa[:author][:name].parameterize}.html",
   '/author.html', ignore: true
 
 # General configuration
