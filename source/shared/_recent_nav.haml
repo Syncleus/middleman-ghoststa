@@ -1,0 +1,8 @@
+%nav.menu
+  %span.menu-heading Recent Posts
+
+  - page_articles.each do |article|
+    - if article.url == current_page.url
+      %a.menu-item.tag.selected{:href => article.url}= article.title
+    - else
+      %a.menu-item.tag{:href => article.url}= article.title
