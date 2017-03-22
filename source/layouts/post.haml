@@ -104,15 +104,15 @@
                     #{tags(current_article)}
           %section.post-content= yield
         %section.share.text-center
-          %a.share-twitter{:href => "https://twitter.com/intent/tweet?text=#{current_article.title}&url=#{current_article.url}", :onclick => "window.open(this.href, 'twitter-share', 'width=550,height=235');return false;", :true => ""}
+          %a.share-twitter{:href => "https://twitter.com/intent/tweet?text=#{current_article.title}&url=#{URI.join(blog_settings.url, current_page.url)}", :onclick => "window.open(this.href, 'twitter-share', 'width=550,height=235');return false;", :true => ""}
             %span.fa-stack.fa-lg
               %i.fa.fa-circle.fa-stack-2x
               %i.fa.fa-twitter.fa-stack-1x.fa-inverse
-          %a.share-facebook{:href => "https://www.facebook.com/sharer/sharer.php?u=#{current_article.url}", :onclick => "window.open(this.href, 'facebook-share','width=580,height=296');return false;", :true => ""}
+          %a.share-facebook{:href => "https://www.facebook.com/sharer/sharer.php?u=#{URI.join(blog_settings.url, current_page.url)}", :onclick => "window.open(this.href, 'facebook-share','width=580,height=296');return false;", :true => ""}
             %span.fa-stack.fa-lg
               %i.fa.fa-circle.fa-stack-2x
               %i.fa.fa-facebook.fa-stack-1x.fa-inverse
-          %a.share-google-plus{:href => "https://plus.google.com/share?url=#{current_article.url}", :onclick => "window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;", :true => ""}
+          %a.share-google-plus{:href => "https://plus.google.com/share?url=#{URI.join(blog_settings.url, current_page.url)}", :onclick => "window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;", :true => ""}
             %span.fa-stack.fa-lg
               %i.fa.fa-circle.fa-stack-2x
               %i.fa.fa-google.fa-stack-1x.fa-inverse
