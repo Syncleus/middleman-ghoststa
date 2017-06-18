@@ -5,7 +5,7 @@
 1. Create a new project with the template:
 
   ```bash
-  middleman init -T danielbayerlein/middleman-ghoststa MY_PROJECT_FOLDER
+  middleman init -T Syncleus/middleman-ghoststa MY_PROJECT_FOLDER
   ```
 
 2. Change the `ghoststa` settings in `config.rb`.
