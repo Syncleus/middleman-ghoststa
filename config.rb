@@ -20,7 +20,8 @@ config[:ghoststa] = {
     twitter: nil # Optional
   },
   navigation: {
-    "Home" => "/"
+    "Home" => "/",
+    "Blog" => "/blog"
   }
 }
 
@@ -112,9 +113,19 @@ activate :directory_indexes
 
 # Middleman-Syntax - https://github.com/middleman/middleman-syntax
 set :haml, { ugly: true }
-set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true, smartypants: true, footnotes: true,
-  link_attributes: { rel: 'nofollow' }, tables: true
+
+#uncomment the following to use redcarpet instead of kramdown and comment the following block.
+#set :markdown_engine, :redcarpet
+#set :markdown, fenced_code_blocks: true, smartypants: true, footnotes: true,
+#  link_attributes: { rel: 'nofollow' }, tables: true
+set :markdown_engine, :kramdown
+set :markdown, :layout_engine => :haml,
+    :tables             => true,
+    :autolink           => true,
+    :smartypants        => true,
+    :fenced_code_blocks => true,
+    :footnotes          => true
+
 activate :syntax, line_numbers: false
 
 # Middleman-Sprockets - https://github.com/middleman/middleman-sprockets

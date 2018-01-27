@@ -1,8 +1,8 @@
 %nav.menu.tags
   - if selected_tag == 'all'
-    %a.menu-item.selected{"data-slug" => "all", :href => "/"} All posts
+    %a.menu-item.selected{"data-slug" => "all", :href => "/blog"} All posts
   - else
-    %a.menu-item{"data-slug" => "all", :href => "/"} All posts
+    %a.menu-item{"data-slug" => "all", :href => "/blog"} All posts
 
   - blog.tags.each do |tag, articles|
     - if selected_tag == tag

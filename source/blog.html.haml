@@ -1,0 +1,19 @@
+---
+pageable: true
+per_page: 6
+---
+
+
+%header.subheader
+  .container
+    %h2.page-title
+      = blog_settings.name
+      %small= blog_settings.description
+%main#content.container{role: :main}
+  .row
+    .col-md-9
+      = partial('shared/page_articles',
+                locals: { page_articles: page_articles, paginate: paginate })
+    .col-md-3
+      = partial('shared/tags_nav',
+                locals: { blog: blog, selected_tag: 'all' })

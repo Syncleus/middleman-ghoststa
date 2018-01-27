@@ -19,7 +19,10 @@ gem 'builder', '~> 3.2.2'
 
 # Code syntax highlighting
 gem 'middleman-syntax', '~> 3.0.0'
+
+#uncomment the following to use redcarpet instead of kramdown and comment the following block.
 gem 'redcarpet', '~> 3.3.4'
+gem 'kramdown', '~> 1.13.2'
 
 # For "summary"-Helper
 gem 'nokogiri', '~> 1.6.8'
